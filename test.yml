@@ -1,0 +1,8 @@
+#!/usr/bin/env ansible-playbook
+
+---
+- hosts: localhost
+  vars_files:
+    - 'vars/main.yml'
+  tasks:
+    - include: 'tasks/main.yml'

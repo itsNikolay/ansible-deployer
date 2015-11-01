@@ -2,5 +2,5 @@
 
 ### TESTS
 ```
-ansible-playbook tests/test.yml -i tests/local_hosts
+ansible-playbook test.yml -i hosts/local_hosts
 ```

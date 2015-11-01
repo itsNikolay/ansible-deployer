@@ -1,7 +1,0 @@
-#!/usr/bin/env ansible-playbook
-
----
-- name: ansible-deployer
-  hosts: localhost
-  roles:
-    - ansible-deployer

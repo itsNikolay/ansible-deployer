@@ -1,2 +1,4 @@
 ---
-# vars file for ansible-deployer
+deployer_group: deployers
+deployer: deployer
+authorized_key: https://github.com/itsNikolay.keys

@@ -1,15 +1,27 @@
 ---
 - name: create group
   group:
-    name: deployers
+    name: "{{ deployer_group }}"
     state: present
+
+- shell: "grep {{ deployer_group }} /etc/group"
+  register: created_group
+- name: it assets group was created
+  assert: { that: "created_group.rc == 0" }
 
 - name: user creation
   user:
-    name: johnd4
-    group: deployers
+    name: "{{ deployer }}"
+    group: "{{ deployer_group }}"
     append: yes
     generate_ssh_key: yes
 
+- shell: "groups {{ deployer }}"
+  register: created_user
+- name: It assets user was created
+  assert: { that: "created_user.rc == 0" }
+
 - name: add your own authorized_key
-  authorized_key: user=johnd4 key=https://github.com/itsNikolay.keys
+  authorized_key:
+    user: "{{ deployer }}"
+    key: "{{ authorized_key }}"

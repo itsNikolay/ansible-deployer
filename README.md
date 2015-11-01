@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/itsNikolay/ansible-test.svg)](https://travis-ci.org/itsNikolay/ansible-test)
 
+
 Role Name
 =========
 

@@ -1,0 +1,14 @@
+#!/usr/bin/env ansible-playbook
+
+---
+- name: create deployer
+  hosts: localhost
+  roles:
+    - role: ansible-deployer
+
+  #tasks:
+    #- name: it creates a group
+      #command: "grep ansibletestuser /etc/passwd /etc/group"
+      #register: user
+    #- fail: msg="{{ user }} no user"
+      #when: user != "hello"

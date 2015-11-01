@@ -1,0 +1,15 @@
+---
+- name: create group
+  group:
+    name: deployers
+    state: present
+
+- name: user creation
+  user:
+    name: johnd4
+    group: deployers
+    append: yes
+    generate_ssh_key: yes
+
+- name: add your own authorized_key
+  authorized_key: user=johnd4 key=https://github.com/itsNikolay.keys

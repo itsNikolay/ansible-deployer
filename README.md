@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/itsNikolay/ansible-test.svg)](https://travis-ci.org/itsNikolay/ansible-test)
+[![Build Status](https://travis-ci.org/itsNikolay/ansible-deployer.svg?branch=master)](https://travis-ci.org/itsNikolay/ansible-deployer)
 
 ### TESTS
 ```

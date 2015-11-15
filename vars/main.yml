@@ -1,4 +1,4 @@
 ---
-deployer_group: deployers
-deployer: deployer
+deployer_group: deploy
+deployer: deploy
 authorized_key: https://github.com/itsNikolay.keys

@@ -25,3 +25,36 @@
   authorized_key:
     user: "{{ deployer }}"
     key: "{{ authorized_key }}"
+
+- name: create app folder
+  file:
+    path: '/var/www'
+    state: 'directory'
+    group: "{{ deployer_group }}"
+    mode: '770'
+
+- name: add rigths to rbenv
+  file:
+    path: "/usr/local/rbenv"
+    mode: "770"
+    group: "{{ deployer_group }}"
+    recurse: yes
+
+- name: install build depends
+  apt: pkg={{ item }} state=present install_recommends=no
+  with_items:
+    - build-essential
+    - git
+    - libcurl4-openssl-dev
+    - libffi-dev
+    - libreadline-dev
+    - libssl-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - zlib1g-dev
+    - libpq-dev
+
+- name: create db
+  postgresql_db: name=testapp_production
+                 encoding='UTF-8'
+                 template='template0'
